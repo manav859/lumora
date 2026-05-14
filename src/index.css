@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+:root {
+  --lumora-black: #10100f;
+  --lumora-charcoal: #171715;
+  --lumora-ivory: #f6efe3;
+  --lumora-cream: #fff8ec;
+  --lumora-sand: #c9ad7a;
+  --lumora-taupe: #8a7554;
+  --lumora-gold: #d6a84f;
+  --lumora-amber: #ffbf5a;
+  --lumora-text-dark: #17130f;
+  --lumora-text-light: #f8efe0;
+  --lumora-muted-dark: rgba(248, 239, 224, 0.68);
+  --lumora-muted-light: rgba(23, 19, 15, 0.62);
+  --lumora-border-dark: rgba(255, 255, 255, 0.11);
+  --lumora-border-light: rgba(23, 19, 15, 0.12);
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --lumora-bg: var(--lumora-black);
+  --lumora-surface: rgba(23, 23, 21, 0.76);
+  --lumora-surface-soft: rgba(31, 28, 25, 0.92);
+  --lumora-surface-strong: rgba(14, 13, 12, 0.96);
+  --lumora-text: var(--lumora-text-light);
+  --lumora-muted: var(--lumora-muted-dark);
+  --lumora-border: var(--lumora-border-dark);
+  --lumora-glow: rgba(255, 191, 90, 0.5);
+  --lumora-glow-soft: rgba(255, 191, 90, 0.14);
+  --lumora-glass: rgba(19, 18, 16, 0.64);
+  --lumora-shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.22);
+  --lumora-shadow-strong: 0 32px 90px rgba(0, 0, 0, 0.3);
+  --lumora-button-bg: rgba(246, 191, 94, 0.92);
+  --lumora-button-text: #18120d;
+  --lumora-button-border: rgba(255, 209, 125, 0.28);
+  --lumora-pill-bg: rgba(255, 255, 255, 0.03);
+  --lumora-pill-active-bg: rgba(246, 191, 94, 0.92);
+  --lumora-pill-active-text: #18120d;
+  --lumora-pill-active-border: rgba(255, 209, 125, 0.24);
+  --lumora-panel-bg-deep: linear-gradient(150deg, rgba(18, 16, 15, 0.98) 0%, rgba(10, 9, 8, 1) 100%);
+  --lumora-panel-bg-warm: linear-gradient(160deg, rgba(34, 29, 26, 0.92) 0%, rgba(16, 13, 11, 0.98) 100%);
+  --lumora-panel-bg-split: linear-gradient(135deg, rgba(21, 18, 16, 0.96) 0%, rgba(13, 11, 10, 0.98) 58%, rgba(42, 34, 28, 0.92) 100%);
+  --lumora-panel-glow-opacity: 0.06;
+  --lumora-accent-shell: rgba(255, 250, 241, 0.12);
+  --lumora-accent-stem: rgba(255, 250, 241, 0.22);
+  --lumora-accent-edge: rgba(255, 250, 241, 0.13);
+  --lumora-accent-glow-opacity: 0.11;
+  --lumora-accent-floor-opacity: 0.28;
+  --lumora-accent-shell-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  color-scheme: dark;
+}
+
+:root[data-lamp-state='on'],
+[data-lamp-state='on'] {
+  --lumora-bg: var(--lumora-ivory);
+  --lumora-surface: rgba(255, 248, 236, 0.74);
+  --lumora-surface-soft: rgba(241, 229, 208, 0.94);
+  --lumora-surface-strong: rgba(27, 23, 20, 0.9);
+  --lumora-text: var(--lumora-text-dark);
+  --lumora-muted: var(--lumora-muted-light);
+  --lumora-border: var(--lumora-border-light);
+  --lumora-glow: rgba(255, 191, 90, 0.7);
+  --lumora-glow-soft: rgba(255, 191, 90, 0.22);
+  --lumora-glass: rgba(255, 248, 236, 0.64);
+  --lumora-shadow-soft: 0 24px 70px rgba(56, 37, 11, 0.1);
+  --lumora-shadow-strong: 0 32px 90px rgba(44, 28, 8, 0.16);
+  --lumora-button-bg: #1c1713;
+  --lumora-button-text: #fff8ec;
+  --lumora-button-border: rgba(28, 23, 19, 0.08);
+  --lumora-pill-bg: rgba(23, 19, 15, 0.04);
+  --lumora-pill-active-bg: rgba(28, 23, 19, 0.94);
+  --lumora-pill-active-text: #fff8ec;
+  --lumora-pill-active-border: rgba(28, 23, 19, 0.08);
+  --lumora-panel-bg-deep: linear-gradient(150deg, rgba(28, 23, 20, 0.96) 0%, rgba(67, 49, 31, 0.76) 100%);
+  --lumora-panel-bg-warm: linear-gradient(160deg, rgba(255, 248, 236, 0.96) 0%, rgba(240, 225, 202, 0.92) 100%);
+  --lumora-panel-bg-split: linear-gradient(135deg, rgba(246, 239, 227, 0.92) 0%, rgba(237, 226, 210, 0.88) 50%, rgba(26, 22, 18, 0.92) 100%);
+  --lumora-panel-glow-opacity: 0.28;
+  --lumora-accent-shell: rgba(255, 248, 238, 0.94);
+  --lumora-accent-stem: rgba(106, 77, 30, 0.82);
+  --lumora-accent-edge: rgba(117, 88, 37, 0.16);
+  --lumora-accent-glow-opacity: 0.76;
+  --lumora-accent-floor-opacity: 0.85;
+  --lumora-accent-shell-shadow: 0 14px 28px rgba(255, 207, 112, 0.16), inset 0 -10px 18px rgba(209, 167, 76, 0.14);
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  background-color: var(--lumora-bg);
+  color: var(--lumora-text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.lumora-app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, var(--lumora-glow-soft), transparent 22%),
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.03), transparent 18%),
+    linear-gradient(180deg, var(--lumora-bg) 0%, var(--lumora-bg) 100%);
+  color: var(--lumora-text);
+}
+
+.lumora-theme-transition {
+  transition-property: border-color, box-shadow, opacity, fill, stroke, transform, filter;
+  transition-duration: 0.12s;
+  transition-timing-function: var(--ease-smooth);
+}
+
+.lumora-container {
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 2vw + 0.8rem, 4rem);
+}
+
+.lumora-section {
+  padding-block: clamp(4.5rem, 7vw, 7.25rem);
+}
+
+.lumora-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lumora-muted);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+a,
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(255, 191, 90, 0.24);
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lumora-border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lumora-gold);
+}
+
+:focus-visible {
+  outline: 2px solid var(--lumora-amber);
+  outline-offset: 3px;
+}
+
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
